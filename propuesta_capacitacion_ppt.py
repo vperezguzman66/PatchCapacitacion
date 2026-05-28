@@ -230,15 +230,26 @@ def familias_de_enfoque(familias_conocidas: Set[str]) -> Set[str]:
     return foco or set(familias_conocidas)
 
 
-def base_conocida_texto(conocidas: Set, tech_categoria: Dict) -> str:
+def base_conocida_items(conocidas: Set, tech_categoria: Dict, limite: int = 8) -> List[str]:
     tecnologias = sorted([str(t).strip() for t in conocidas], key=str.lower)
     if not tecnologias:
-        return "Sin base conocida relevante"
-    detalle = []
-    for tech in tecnologias[:8]:
+        return ["Sin base conocida relevante"]
+    detalle: List[str] = []
+    for tech in tecnologias[:limite]:
         familia = familia_tecnologia(tech, str(tech_categoria.get(tech, "")).strip())
         detalle.append(f"{tech} [{familia}]")
-    return "\n".join([f"• {item}" for item in detalle])
+    if len(tecnologias) > limite:
+        detalle.append(f"… y {len(tecnologias) - limite} tecnologías más")
+    return detalle
+
+
+def resumir_lista(items: List[str], limite: int = 4, separador: str = " | ") -> str:
+    lista = [str(i).strip() for i in items if str(i).strip()]
+    if not lista:
+        return ""
+    if len(lista) <= limite:
+        return separador.join(lista)
+    return separador.join(lista[:limite]) + f" | +{len(lista) - limite} más"
 
 
 def add_rect(slide, l, t, w, h, fill_rgb):
@@ -260,13 +271,19 @@ def add_text(
     bold=False,
     color=RGBColor(0, 0, 0),
     align=PP_ALIGN.LEFT,
+    line_spacing=1.15,
 ):
     txb = slide.shapes.add_textbox(Inches(l), Inches(t), Inches(w), Inches(h))
     txb.word_wrap = True
     tf = txb.text_frame
     tf.word_wrap = True
+    tf.margin_left = Inches(0.05)
+    tf.margin_right = Inches(0.05)
+    tf.margin_top = Inches(0.03)
+    tf.margin_bottom = Inches(0.03)
     p = tf.paragraphs[0]
     p.alignment = align
+    p.line_spacing = line_spacing
     run = p.add_run()
     run.text = text
     run.font.size = Pt(size)
@@ -458,8 +475,8 @@ def generar_presentacion(archivo_entrada: str, archivo_salida: str):
             for t in conocidas
         }
         familias_objetivo = familias_de_enfoque(familias_conocidas)
-        familias_conocidas_txt = " | ".join(sorted(familias_conocidas)) if familias_conocidas else "Sin familias claras"
-        familias_objetivo_txt = " | ".join(sorted(familias_objetivo)) if familias_objetivo else "Sin familias objetivo"
+        familias_conocidas_txt = resumir_lista(sorted(familias_conocidas), limite=4) if familias_conocidas else "Sin familias claras"
+        familias_objetivo_txt = resumir_lista(sorted(familias_objetivo), limite=4) if familias_objetivo else "Sin familias objetivo"
 
         recs = proponer_para_persona(
             persona_row=persona_row,
@@ -486,27 +503,27 @@ def generar_presentacion(archivo_entrada: str, archivo_salida: str):
 
         s = prs.slides.add_slide(blank)
         add_rect(s, 0, 0, 13.33, 7.5, GRIS_CLARO)
-        add_rect(s, 0, 0, 13.33, 1.0, AZUL_OSCURO)
+        add_rect(s, 0, 0, 13.33, 1.48, AZUL_OSCURO)
 
-        add_text(s, str(persona_nombre), 0.3, 0.08, 8.8, 0.55, size=22, bold=True, color=BLANCO)
+        add_text(s, str(persona_nombre), 0.3, 0.08, 9.4, 0.62, size=26, bold=True, color=BLANCO)
         add_text(
             s,
             f"Conocidas: {len(conocidas)} | Brechas enfocadas: {len(gaps)} | Recomendadas: {len(recs)}",
             0.3,
-            0.62,
-            10,
+            0.66,
+            11.2,
             0.24,
-            size=10,
+            size=12,
             color=RGBColor(0xBD, 0xD7, 0xEE),
         )
         add_text(
             s,
             f"Base/familia: {familias_conocidas_txt}",
             0.3,
-            0.85,
-            10.5,
-            0.18,
-            size=9,
+            0.92,
+            12.5,
+            0.24,
+            size=11,
             bold=True,
             color=RGBColor(0xE6, 0xF4, 0xFA),
         )
@@ -514,17 +531,17 @@ def generar_presentacion(archivo_entrada: str, archivo_salida: str):
             s,
             f"Alcance de la propuesta: {familias_objetivo_txt}",
             0.3,
-            1.03,
-            10.5,
-            0.18,
-            size=8,
+            1.20,
+            12.5,
+            0.24,
+            size=10,
             bold=True,
             color=RGBColor(0xD7, 0xEE, 0xF7),
         )
 
         # Bloque principal: perfeccionamiento sugerido y base conocida explícita
-        add_rect(s, 0.2, 1.35, 12.95, 5.95, RGBColor(0xF7, 0xFB, 0xFF))
-        add_rect(s, 0.28, 1.44, 12.79, 0.56, RGBColor(0x1D, 0x72, 0x8A))
+        add_rect(s, 0.2, 1.62, 12.95, 5.68, RGBColor(0xF7, 0xFB, 0xFF))
+        add_rect(s, 0.28, 1.70, 12.79, 0.62, RGBColor(0x1D, 0x72, 0x8A))
         foco = recs[0] if recs else None
         if foco:
             foco_txt = (
@@ -534,67 +551,90 @@ def generar_presentacion(archivo_entrada: str, archivo_salida: str):
         else:
             foco_txt = "Sin brechas detectadas en tecnologías relevantes del banco."
 
-        cursos_txt = cursos_sugeridos_texto(conocidas, tech_categoria, demanda_apps, limite=3)
+        cursos_txt = cursos_sugeridos_texto(conocidas, tech_categoria, demanda_apps, limite=2)
 
         add_text(
             s,
             "PERFECCIONAMIENTO SUGERIDO",
-            0.35,
-            1.58,
-            12.6,
-            0.16,
-            size=9,
+            0.40,
+            1.90,
+            12.45,
+            0.20,
+            size=12,
             bold=True,
             color=BLANCO,
             align=PP_ALIGN.LEFT,
+            line_spacing=1.0,
         )
-        add_rect(s, 0.34, 2.06, 12.65, 1.62, BLANCO)
+        add_rect(s, 0.34, 2.38, 12.65, 1.70, BLANCO)
         add_text(
             s,
             cursos_txt,
             0.35,
-            2.14,
+            2.50,
             12.6,
-            1.42,
-            size=8,
+            1.46,
+            size=11,
             bold=False,
-            color=RGBColor(0x1F, 0x4E, 0x79),
+            color=RGBColor(0x1B, 0x3F, 0x63),
+            line_spacing=1.25,
         )
-        add_rect(s, 0.34, 3.78, 12.65, 1.30, RGBColor(0xE8, 0xF4, 0xF8))
+        add_rect(s, 0.34, 4.16, 12.65, 1.74, RGBColor(0xE8, 0xF4, 0xF8))
         add_text(
             s,
             "BASE CONOCIDA EXPLÍCITA",
             0.35,
-            3.86,
+            4.28,
             12.6,
-            0.16,
-            size=8,
+            0.20,
+            size=11,
             bold=True,
-            color=RGBColor(0x1D, 0x4E, 0x2E),
+            color=RGBColor(0x14, 0x3B, 0x24),
+            line_spacing=1.0,
         )
+        base_items = base_conocida_items(conocidas, tech_categoria, limite=8)
+        midpoint = (len(base_items) + 1) // 2
+        base_col_1 = "\n".join([f"• {item}" for item in base_items[:midpoint]])
+        base_col_2 = "\n".join([f"• {item}" for item in base_items[midpoint:]])
+
         add_text(
             s,
-            base_conocida_texto(conocidas, tech_categoria),
+            base_col_1,
             0.35,
-            4.06,
-            12.6,
-            0.92,
-            size=7,
+            4.52,
+            6.18,
+            1.26,
+            size=10,
             bold=False,
-            color=RGBColor(0x1D, 0x4E, 0x2E),
+            color=RGBColor(0x14, 0x3B, 0x24),
+            line_spacing=1.25,
         )
-        add_rect(s, 0.34, 5.16, 12.65, 1.00, RGBColor(0xF4, 0xF6, 0xF7))
-        add_text(s, "FOCO INMEDIATO", 0.35, 5.24, 12.6, 0.14, size=8, bold=True, color=RGBColor(0x5B, 0x6B, 0x73))
+        if base_col_2:
+            add_text(
+                s,
+                base_col_2,
+                6.72,
+                4.52,
+                6.18,
+                1.26,
+                size=10,
+                bold=False,
+                color=RGBColor(0x14, 0x3B, 0x24),
+                line_spacing=1.25,
+            )
+        add_rect(s, 0.34, 5.96, 12.65, 1.20, RGBColor(0xF4, 0xF6, 0xF7))
+        add_text(s, "FOCO INMEDIATO", 0.35, 6.06, 12.6, 0.18, size=11, bold=True, color=RGBColor(0x3E, 0x4C, 0x53), line_spacing=1.0)
         add_text(
             s,
             foco_txt,
             0.35,
-            5.40,
+            6.30,
             12.6,
-            0.66,
-            size=7,
+            0.78,
+            size=10,
             bold=False,
-            color=RGBColor(0x5B, 0x6B, 0x73),
+            color=RGBColor(0x2F, 0x3A, 0x40),
+            line_spacing=1.2,
         )
 
     output = archivo_salida
