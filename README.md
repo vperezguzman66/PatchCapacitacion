@@ -86,6 +86,7 @@ Resultado esperado:
   - Una lámina por persona.
   - Tres columnas por fase (Quick Wins, Consolidación, Expansión).
   - Bloque de "Base conocida actual" por persona para validar alineación con la sugerencia.
+  - Bloque de "Perfeccionamiento sugerido" con cursos reales de Udemy asociados a la base conocida.
   - Semáforo de afinidad visible en recomendaciones/foco inmediato.
   - Foco inmediato recomendado al pie de la lámina.
 
@@ -93,6 +94,7 @@ El plan se construye tomando en cuenta:
 
 - demanda de tecnología en aplicaciones del banco,
 - afinidad con conocimientos ya existentes en cada persona,
+- cursos de perfeccionamiento externos identificados en Udemy para tecnologías ya conocidas,
 - progresión de aprendizaje en 3 fases:
   - Fase 1 (Quick Wins)
   - Fase 2 (Consolidación)
@@ -140,6 +142,11 @@ En cada lámina de persona:
 - **Columna derecha**:
   - ❌ Tecnologías a aprender
   - agrupadas por categoría con encabezados destacados
+
+- **Banda inferior**:
+  - base conocida destacada
+  - cursos de perfeccionamiento sugeridos desde Udemy
+  - foco inmediato recomendado
 
 - **Barra de progreso**:
   - porcentaje de cobertura respecto del universo de tecnologías relevantes en banco.

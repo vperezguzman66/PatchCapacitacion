@@ -1,5 +1,6 @@
 import argparse
 from dataclasses import dataclass
+import unicodedata
 from typing import Dict, List, Set
 
 import pandas as pd
@@ -23,12 +24,143 @@ GRIS_TEXTO = RGBColor(0x44, 0x44, 0x44)
 class Recomendacion:
     tecnologia: str
     categoria: str
+    familia: str
     prioridad: float
     nivel: str
     apps: int
     relacionadas: str
     afinidad: str
     accion: str
+
+
+CATALOGO_CURSOS = [
+    {
+        "plataforma": "Udemy",
+        "claves": ["python"],
+        "tecnologia": "Python",
+        "curso": "100 Days of Code™: The Complete Python Pro Bootcamp",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["python"],
+        "tecnologia": "Python",
+        "curso": "Automate the Boring Stuff with Python Programming",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["java"],
+        "tecnologia": "Java",
+        "curso": "Java Masterclass 2025: 130+ Hours of Expert Lessons",
+        "duracion": "130+ horas",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["java"],
+        "tecnologia": "Java",
+        "curso": "Modern Java: Mastering Features from Java 8 to Java 25",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["spring boot", "spring framework", "spring mvc", "spring cloud"],
+        "tecnologia": "Spring Boot",
+        "curso": "Master Spring Boot 3 & Spring Framework 6 with Java",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["spring boot", "microservices"],
+        "tecnologia": "Spring Boot",
+        "curso": "Master Microservices with Spring Boot and Spring Cloud",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["docker"],
+        "tecnologia": "Docker",
+        "curso": "Docker for the Absolute Beginner - Hands On - DevOps",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["docker"],
+        "tecnologia": "Docker",
+        "curso": "Docker & Kubernetes: The Practical Guide",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["kubernetes"],
+        "tecnologia": "Kubernetes",
+        "curso": "Certified Kubernetes Administrator (CKA) with Practice Tests",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["kubernetes"],
+        "tecnologia": "Kubernetes",
+        "curso": "Kubernetes Certified Application Developer (CKAD) with Tests",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["aws", "amazon web services", "amazon aws"],
+        "tecnologia": "AWS",
+        "curso": "Ultimate AWS Certified Cloud Practitioner CLF-C02 2026",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["aws", "amazon web services", "amazon aws"],
+        "tecnologia": "AWS",
+        "curso": "AWS From Zero to Hero - The Complete Guide",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["azure", "az-900", "microsoft azure"],
+        "tecnologia": "Azure",
+        "curso": "Master Microsoft Azure Fundamentals: AZ-900 Exam Prep 2026",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["azure", "az-900", "microsoft azure"],
+        "tecnologia": "Azure",
+        "curso": "Microsoft Azure Fundamentals: AZ-900 Full Course & Exams",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["sql", "mysql", "postgresql", "database"],
+        "tecnologia": "SQL",
+        "curso": "The Complete SQL Bootcamp: Go from Zero to Hero",
+        "duracion": "30 horas",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["sql", "mysql", "postgresql", "database"],
+        "tecnologia": "SQL",
+        "curso": "SQL and PostgreSQL: The Complete Developer's Guide",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["mongodb", "nosql"],
+        "tecnologia": "MongoDB",
+        "curso": "MongoDB - The Complete Developer's Guide",
+        "duracion": "",
+    },
+    {
+        "plataforma": "Udemy",
+        "claves": ["mongodb", "nosql"],
+        "tecnologia": "MongoDB",
+        "curso": "The Complete MongoDB Course",
+        "duracion": "",
+    },
+]
 
 
 def semaforo_afinidad(conocidas_cat: int, total_cat: int) -> str:
@@ -38,6 +170,75 @@ def semaforo_afinidad(conocidas_cat: int, total_cat: int) -> str:
     if conocidas_cat == 1 or ratio >= 0.12:
         return "🟡 Media"
     return "🔴 Baja"
+
+
+def normalizar(texto: str) -> str:
+    base = unicodedata.normalize("NFKD", str(texto))
+    return "".join(c for c in base if not unicodedata.combining(c)).lower().strip()
+
+
+def buscar_curso(tecnologia: str, categoria: str) -> str | None:
+    texto = normalizar(tecnologia)
+    cat = normalizar(categoria)
+    for item in CATALOGO_CURSOS:
+        claves = item["claves"]
+        if any(clave in texto or clave in cat for clave in claves):
+            duracion = f" · {item['duracion']}" if item.get("duracion") else ""
+            return f"{item['plataforma']} · {item['tecnologia']} → {item['curso']}{duracion}"
+    return None
+
+
+def familia_tecnologia(tecnologia: str, categoria: str = "") -> str:
+    texto = normalizar(f"{categoria} {tecnologia}")
+    if any(k in texto for k in ["seguridad", "security", "ciber"]):
+        return "Seguridad"
+    if any(k in texto for k in ["infra", "devops", "kubernetes", "docker", "container", "contenedor"]):
+        return "DevOps/Infra"
+    if any(k in texto for k in ["cloud", "azure", "aws", "gcp", "almacenamiento", "storage", "nube"]):
+        return "Cloud"
+    if any(k in texto for k in ["datos", "base de datos", "database", "sql", "mysql", "postgres", "mongodb", "nosql", "oracle"]):
+        return "Datos"
+    if any(k in texto for k in ["api", "integr", "microservice", "microserv", "rest", "soap"]):
+        return "Integración/API"
+    if any(k in texto for k in ["framework", "spring", "hibernate", "jpa", "django", "flask", "react", "angular", "vue", "testing", "test"]):
+        return "Frameworks"
+    if any(k in texto for k in ["lenguaje", "programacion", "programación", "java", "python", "javascript", "typescript", "c#", "go", "kotlin"]):
+        return "Lenguajes"
+    return "Otros"
+
+
+FAMILIAS_FOCUS = {
+    "Lenguajes": {"Lenguajes", "Frameworks", "Datos", "Integración/API"},
+    "Frameworks": {"Frameworks", "Lenguajes", "Datos", "Integración/API"},
+    "Datos": {"Datos", "Lenguajes", "Frameworks", "Integración/API"},
+    "Integración/API": {"Integración/API", "Frameworks", "Lenguajes", "Datos"},
+    "Cloud": {"Cloud", "Frameworks", "Datos", "Integración/API"},
+    "DevOps/Infra": {"DevOps/Infra", "Cloud"},
+    "Seguridad": {"Seguridad"},
+    "Otros": {"Otros"},
+}
+
+
+def familias_de_enfoque(familias_conocidas: Set[str]) -> Set[str]:
+    foco: Set[str] = set()
+    for familia in familias_conocidas:
+        foco.update(FAMILIAS_FOCUS.get(familia, {familia}))
+    if "Seguridad" not in familias_conocidas:
+        foco.discard("Seguridad")
+    if "DevOps/Infra" not in familias_conocidas:
+        foco.discard("DevOps/Infra")
+    return foco or set(familias_conocidas)
+
+
+def base_conocida_texto(conocidas: Set, tech_categoria: Dict) -> str:
+    tecnologias = sorted([str(t).strip() for t in conocidas], key=str.lower)
+    if not tecnologias:
+        return "Sin base conocida relevante"
+    detalle = []
+    for tech in tecnologias[:8]:
+        familia = familia_tecnologia(tech, str(tech_categoria.get(tech, "")).strip())
+        detalle.append(f"{tech} [{familia}]")
+    return "\n".join([f"• {item}" for item in detalle])
 
 
 def add_rect(slide, l, t, w, h, fill_rgb):
@@ -116,6 +317,7 @@ def proponer_para_persona(
     techs_relevantes: Set,
     tech_categoria: Dict,
     demanda_apps: Dict,
+    familias_objetivo: Set[str],
 ) -> List[Recomendacion]:
     conocidas = set(tecnologias[persona_row == 1]) & techs_relevantes
     gaps = list(techs_relevantes - conocidas)
@@ -139,6 +341,9 @@ def proponer_para_persona(
     recs = []
     for t in gaps:
         cat = str(tech_categoria.get(t, "Otros")).strip()
+        familia = familia_tecnologia(str(t), cat)
+        if familia not in familias_objetivo:
+            continue
         apps = int(demanda_apps.get(t, 0))
         score_demanda = apps / max_demanda
         conocidas_cat = len(conocidas_por_cat.get(cat, set()))
@@ -162,6 +367,7 @@ def proponer_para_persona(
             Recomendacion(
                 tecnologia=str(t).strip(),
                 categoria=cat,
+                familia=familia,
                 prioridad=round(prioridad, 4),
                 nivel=nivel,
                 apps=apps,
@@ -181,11 +387,37 @@ def resumen_fase_texto(recs_fase: List[Recomendacion], limite: int = 4) -> str:
     top = recs_fase[:limite]
     return "\n".join(
         (
-            f"• {r.tecnologia} ({r.categoria}) | {r.afinidad} | Nivel: {r.nivel} | Apps: {r.apps}\n"
+            f"• {r.tecnologia} ({r.categoria}) [{r.familia}] | {r.afinidad} | Nivel: {r.nivel} | Apps: {r.apps}\n"
             f"  ↳ Intersección base: {r.relacionadas}"
         )
         for r in top
     )
+
+
+def cursos_sugeridos_texto(conocidas: Set, tech_categoria: Dict, demanda_apps: Dict, limite: int = 3) -> str:
+    if not conocidas:
+        return "Perfeccionamiento sugerido: sin base conocida relevante para asociar cursos."
+
+    tecnologias_ordenadas = sorted(
+        [str(t).strip() for t in conocidas],
+        key=lambda t: (-int(demanda_apps.get(t, 0)), t.lower()),
+    )
+
+    sugerencias = []
+    vistos = set()
+    for tecnologia in tecnologias_ordenadas:
+        categoria = str(tech_categoria.get(tecnologia, "Otros")).strip()
+        curso = buscar_curso(tecnologia, categoria)
+        if curso and curso not in vistos:
+            sugerencias.append(curso)
+            vistos.add(curso)
+        if len(sugerencias) >= limite:
+            break
+
+    if not sugerencias:
+        return "Perfeccionamiento sugerido: revisar catálogo interno o rutas de formación equivalentes."
+
+    return "\n".join([f"• {item}" for item in sugerencias])
 
 
 def generar_presentacion(archivo_entrada: str, archivo_salida: str):
@@ -217,25 +449,33 @@ def generar_presentacion(archivo_entrada: str, archivo_salida: str):
         color=RGBColor(0xBD, 0xD7, 0xEE),
         align=PP_ALIGN.CENTER,
     )
-    add_text(s, "Banco Santander Chile · 2026", 1, 4.2, 11, 0.5, size=14, color=RGBColor(0xBD, 0xD7, 0xEE), align=PP_ALIGN.CENTER)
+    add_text(s, "Banco Santander Chile · 2026", 1, 4.2, 11, 0.35, size=14, color=RGBColor(0xBD, 0xD7, 0xEE), align=PP_ALIGN.CENTER)
 
     for persona_nombre, persona_row in personas.iterrows():
+        conocidas = set(tecnologias[persona_row == 1]) & techs_relevantes
+        familias_conocidas = {
+            familia_tecnologia(str(t).strip(), str(tech_categoria.get(t, "")).strip())
+            for t in conocidas
+        }
+        familias_objetivo = familias_de_enfoque(familias_conocidas)
+        familias_conocidas_txt = " | ".join(sorted(familias_conocidas)) if familias_conocidas else "Sin familias claras"
+        familias_objetivo_txt = " | ".join(sorted(familias_objetivo)) if familias_objetivo else "Sin familias objetivo"
+
         recs = proponer_para_persona(
             persona_row=persona_row,
             tecnologias=tecnologias,
             techs_relevantes=techs_relevantes,
             tech_categoria=tech_categoria,
             demanda_apps=demanda_apps,
+            familias_objetivo=familias_objetivo,
         )
 
         f1 = recs[:6]
         f2 = recs[6:12]
         f3 = recs[12:20]
 
-        conocidas = set(tecnologias[persona_row == 1]) & techs_relevantes
         gaps = set(techs_relevantes) - conocidas
         conocidas_ordenadas = sorted([str(t).strip() for t in conocidas], key=str.lower)
-        conocidas_preview = " | ".join(conocidas_ordenadas[:10]) if conocidas_ordenadas else "Sin base conocida relevante"
 
         conocidas_por_cat = {}
         for t in conocidas:
@@ -251,36 +491,40 @@ def generar_presentacion(archivo_entrada: str, archivo_salida: str):
         add_text(s, str(persona_nombre), 0.3, 0.08, 8.8, 0.55, size=22, bold=True, color=BLANCO)
         add_text(
             s,
-            f"Conocidas: {len(conocidas)} | Brechas: {len(gaps)} | Recomendadas: {len(recs)}",
+            f"Conocidas: {len(conocidas)} | Brechas enfocadas: {len(gaps)} | Recomendadas: {len(recs)}",
             0.3,
             0.62,
             10,
-            0.3,
-            size=11,
+            0.24,
+            size=10,
             color=RGBColor(0xBD, 0xD7, 0xEE),
         )
+        add_text(
+            s,
+            f"Base/familia: {familias_conocidas_txt}",
+            0.3,
+            0.85,
+            10.5,
+            0.18,
+            size=9,
+            bold=True,
+            color=RGBColor(0xE6, 0xF4, 0xFA),
+        )
+        add_text(
+            s,
+            f"Alcance de la propuesta: {familias_objetivo_txt}",
+            0.3,
+            1.03,
+            10.5,
+            0.18,
+            size=8,
+            bold=True,
+            color=RGBColor(0xD7, 0xEE, 0xF7),
+        )
 
-        # Fase headers
-        add_rect(s, 0.2, 1.15, 4.25, 0.35, VERDE)
-        add_text(s, "Fase 1 - Quick Wins", 0.3, 1.19, 4.05, 0.3, size=10, bold=True, color=BLANCO, align=PP_ALIGN.CENTER)
-
-        add_rect(s, 4.55, 1.15, 4.25, 0.35, AMARILLO)
-        add_text(s, "Fase 2 - Consolidación", 4.65, 1.19, 4.05, 0.3, size=10, bold=True, color=RGBColor(0x33, 0x33, 0x33), align=PP_ALIGN.CENTER)
-
-        add_rect(s, 8.9, 1.15, 4.25, 0.35, NARANJO)
-        add_text(s, "Fase 3 - Expansión", 9.0, 1.19, 4.05, 0.3, size=10, bold=True, color=BLANCO, align=PP_ALIGN.CENTER)
-
-        # Fase bodies
-        add_rect(s, 0.2, 1.52, 4.25, 4.65, BLANCO)
-        add_rect(s, 4.55, 1.52, 4.25, 4.65, BLANCO)
-        add_rect(s, 8.9, 1.52, 4.25, 4.65, BLANCO)
-
-        add_text(s, resumen_fase_texto(f1, limite=5), 0.3, 1.62, 4.05, 4.45, size=9, color=GRIS_TEXTO)
-        add_text(s, resumen_fase_texto(f2, limite=5), 4.65, 1.62, 4.05, 4.45, size=9, color=GRIS_TEXTO)
-        add_text(s, resumen_fase_texto(f3, limite=5), 9.0, 1.62, 4.05, 4.45, size=9, color=GRIS_TEXTO)
-
-        # Bloque inferior: base conocida + foco sugerido
-        add_rect(s, 0.2, 6.15, 12.95, 1.15, RGBColor(0xEB, 0xF5, 0xFB))
+        # Bloque principal: perfeccionamiento sugerido y base conocida explícita
+        add_rect(s, 0.2, 1.35, 12.95, 5.95, RGBColor(0xF7, 0xFB, 0xFF))
+        add_rect(s, 0.28, 1.44, 12.79, 0.56, RGBColor(0x1D, 0x72, 0x8A))
         foco = recs[0] if recs else None
         if foco:
             foco_txt = (
@@ -290,29 +534,68 @@ def generar_presentacion(archivo_entrada: str, archivo_salida: str):
         else:
             foco_txt = "Sin brechas detectadas en tecnologías relevantes del banco."
 
+        cursos_txt = cursos_sugeridos_texto(conocidas, tech_categoria, demanda_apps, limite=3)
+
         add_text(
             s,
-            f"Base conocida destacada: {top_cat_txt}",
+            "PERFECCIONAMIENTO SUGERIDO",
             0.35,
-            6.22,
+            1.58,
             12.6,
-            0.28,
+            0.16,
+            size=9,
+            bold=True,
+            color=BLANCO,
+            align=PP_ALIGN.LEFT,
+        )
+        add_rect(s, 0.34, 2.06, 12.65, 1.62, BLANCO)
+        add_text(
+            s,
+            cursos_txt,
+            0.35,
+            2.14,
+            12.6,
+            1.42,
+            size=8,
+            bold=False,
+            color=RGBColor(0x1F, 0x4E, 0x79),
+        )
+        add_rect(s, 0.34, 3.78, 12.65, 1.30, RGBColor(0xE8, 0xF4, 0xF8))
+        add_text(
+            s,
+            "BASE CONOCIDA EXPLÍCITA",
+            0.35,
+            3.86,
+            12.6,
+            0.16,
             size=8,
             bold=True,
             color=RGBColor(0x1D, 0x4E, 0x2E),
         )
         add_text(
             s,
-            f"Tecnologías conocidas (top): {conocidas_preview}",
+            base_conocida_texto(conocidas, tech_categoria),
             0.35,
-            6.50,
+            4.06,
             12.6,
-            0.26,
-            size=8,
+            0.92,
+            size=7,
             bold=False,
-            color=RGBColor(0x2D, 0x34, 0x36),
+            color=RGBColor(0x1D, 0x4E, 0x2E),
         )
-        add_text(s, foco_txt, 0.35, 6.78, 12.6, 0.45, size=9, bold=True, color=RGBColor(0x1B, 0x4F, 0x72))
+        add_rect(s, 0.34, 5.16, 12.65, 1.00, RGBColor(0xF4, 0xF6, 0xF7))
+        add_text(s, "FOCO INMEDIATO", 0.35, 5.24, 12.6, 0.14, size=8, bold=True, color=RGBColor(0x5B, 0x6B, 0x73))
+        add_text(
+            s,
+            foco_txt,
+            0.35,
+            5.40,
+            12.6,
+            0.66,
+            size=7,
+            bold=False,
+            color=RGBColor(0x5B, 0x6B, 0x73),
+        )
 
     output = archivo_salida
     try:
