@@ -1,0 +1,603 @@
+=== 42 LABS ===
+  - Abel Oscar Ramos Calderon
+  - Alejandro Andres Valenzuela Rojas
+  - Alejandro Peralta Vega
+  - Alex Jorge Vallejos Lillo
+  - Alexis San Martin Hax
+  - Alvaro Hernan Gutierrez Grandon
+  - Andres Ignacio Segura Jimenez
+  - Ariel Montano
+  - Carlos Lopez Cosio
+  - Cesar Trincado Riquelme
+  - Christian Alejandro Carvajal Anzoategui
+  - Christopher Arevalo Gonzalez
+  - Claudio Ignacio Lorca Naranjo
+  - Claudio Sanchez Silva
+  - Cristian Araya
+  - Cristian Rolando Aliante Zambrano
+  - Cristobal Valenzuela Martinez
+  - Daniel Garcia Silva
+  - David Isaias Bernal Valderrama
+  - Denison Enrique Luzardo Luzardo
+  - Diego Herrera Aguilera
+  - Diego Rivas Palma
+  - Diego Zuniga
+  - Esteban Misael Ibaca Del Pino
+  - Fabian Aguero
+  - Felipe Antonio Castaneda Alvarado
+  - Felipe Ignacio Diaz Ramirez
+  - Felipe Munoz Montecinos
+  - Felipe Novoa
+  - Fernando Alfredo Ramos Carrasco
+  - Fernando Lopez Urrutia
+  - Francisco Acevedo Guzman
+  - Francisco Javier Hernandez Rios
+  - Francisco Rosales Mardones
+  - Francisco Ulloa
+  - Gabriel Gonzalez Castro
+  - Hernan Diaz Fuentes
+  - Ignacio Javier Cortez Salas
+  - Ivan Andres Serrano Ramos
+  - Ives Ladino
+  - Javier Vega Perez
+  - Jesus Escalona Cuello
+  - Joel Dustin Fernandez Meza
+  - Jorge Alberto Bermudez Cedeno
+  - Jose Alejandro Figuera Caraballo
+  - Jose Manuel Ortiz Fuenzalida
+  - Juan Higueras Arellano
+  - Karine Lorena Ponce Ifion
+  - Leonardo Alfonzo Barrios Perez
+  - Leonor Veronica Canales Alcayaga
+  - Luis Armando Yanez Rios
+  - Luis Delgadillo Rojas
+  - Marcos Toro Saldia
+  - Maria Soledad Barrientos Zamorano
+  - Mario Ramirez Mufioz
+  - Maximiliano Javier Diaz Sepulveda
+  - Mercedes Cueva Requejo
+  - Mireya Cespedes
+  - Patricio Emilio Espinoza Vasquez
+  - Patricio Mardones Gonzalez
+  - Rafael Castro Garcia
+  - Raul Sebastian Alvarez Rivera
+  - Roberto Tapia Guajardo
+  - Rodrigo Alexis Isaac Galvez Pinto
+  - Rodrigo Andres Lobos Leal
+  - Rodrigo Herrera Beiza
+  - Rodrigo Orlando Munoz Vargas
+  - Sandra Mamani Mamani
+  - Sergio Ruiz Carrasco
+  - Stefani Ruth Maury Patifio
+  - Victor Cifuentes
+  - Yizlace Keysi Uzcategui Domero
+
+=== ACGP INGENIERIA DE SOFTWARE S.A. ===
+  - Javier Gallardo Ulloa
+  - Pedro Quispe Luyo
+
+=== AVATTAR CONSULTORA SPA ===
+  - Claudio Tejias Diaz
+  - Gler Maia Isturiz Salas
+  - Ivy Rivera Pernia
+  - Josue Ramirez Carrera
+  - Oscar Jesus Carrasquel
+  - Pablo Allende Lizana
+  - Pablo Borgoa Soto
+  - Rodrigo Arangua Araya
+  - Rudy Francisco Schmidt Mella
+  - Sebastian Francisco Bravo Saavedra
+  - Susana Marin Mejias
+
+=== AXITY CHILE SPA ===
+  - Felipe Munoz Vallejos
+  - Juan Avalo Miranda
+  - Patricio San Martin Carrefio
+
+=== CGSC CONNECTIS GLOBAL SERVICES CHILE SA ===
+  - Aldo Maximiliano Sandoval Bravo
+  - Alonso Zuniga Ortiz
+  - Analia Molina
+  - Bastian Ignacio Manosalva Lagos
+  - Betsy Alejandra Beltran Baier
+  - Carlos Cerruti
+  - Carlos Giovanni Quezada Gonzalez
+  - Carmen Obando Vidal
+  - Claudio Inostroza Hoffmann
+  - Diego Miranda Rojas
+  - Esteban Inostroza Leon
+  - Felipe Ignacio Leal Castro
+  - Felix Gabriel Lugo Garcia
+  - Francisco Contreras Contreras
+  - Francisco Javier Osorio Mufioz
+  - Gisselle Beatriz Zapata Cofre
+  - Gladys Carolina Pefia Palacios
+  - Gloria Del Carmen Soto Catrilaf
+  - Hector Berrios Farias
+  - Hector Eduardo Torres Contrera
+  - Jorge Alejandro Cornejo Jara
+  - Jorge Daniel Ross Sepulveda
+  - Jose Antonio Salazar Cannone
+  - Juan Cerda Retamal
+  - Juan Nufiez Acevedo
+  - Juan Saavedra Cabrera
+  - Karelys Arias Camacho
+  - Magda Lisbeth Mufioz Perez
+  - Miguel Angel Gutierrez Bustos
+  - Miguel Zerene Martinez
+  - Orielle Villalobos Gonzalez
+  - Pablo Andres Caceres Alcande
+  - Pablo Ignacio Munoz Cavieres
+  - Patricio Soto Ordenes
+  - Paulina Andrea Zala Silva
+  - Pilar Soto Rojas
+  - Rocio Gonzalez Mufioz
+  - Sebastian Elias Ovalle Littin
+  - Victor Jaure Ramirez
+
+=== CREASYS COMPUTACION LTDA. ===
+  - Claudio Aranguiz Zufiga
+  - Gustavo Riquelme Dayne
+  - Luis Sanchez Bassaletti
+
+=== CYBERTRUST SPA ===
+  - Jose Jesus Castro Castro
+
+=== DURAN LIMITADA ===
+  - Ingrid del Valle Guzman Fajardo
+  - Rodolfo Araya La Rivera
+
+=== Getronics ===
+  - Alfredo Perez Ofiate
+  - Benjamin Andres Bravo Diaz
+  - Claudia Salazar Martinez
+  - Claudio Alfonso Inostroza Hoffmann
+  - Esteban Andres Inostroza Leon
+  - Luis Ledezma Vergara
+  - Manuel Nelson Morales Canales
+  - Marco Hernan Berrios Ortiz
+  - Mary Elena Meneses Valenzuela
+  - Rene Yuri Castro Salinas
+  - Stella Margaret Reid Yanez
+  - Tyferlin Maria Rojas Torres
+
+=== GLOBAL TUNING SPA ===
+  - Christopher Zufiga Valenzuela
+  - Javier Benjamin Vera Paredes
+
+=== IMAGEMAKER S.A ===
+  - Bryan Alfonso Cofré Orellana
+  - David Aaron Juvinao Gabaldon
+  - David Andres Alfaro Mallet
+  - Diego Caviedes Loyola
+  - Hernando Esquivel
+  - Julio Quevedo Gomez
+  - Leonardo Arturo Ruiz Valdivia
+  - Miguel Angel Perez Monsalve
+  - Sebastian Alejandro Gonzalez Diaz
+
+=== INDRA SISTEMAS CHILE SA ===
+  - Carlos Miguel Ramos Morales
+  - Francisco Gajardo Tobar
+  - Freddy Andres Nufiez Opazo
+  - Jorge Mauricio Caceres Gonzalez
+  - Jose Rafel Puerta Braca
+  - Kevin Lopez Mora
+  - Leonardo Esteban Carrasco Abarca
+  - Matias Munoz Munoz
+  - Nicolas Osvaldo Mena Fernandez
+  - Patricio Maraboli Valenzuela
+  - Roberto Perez Reyes
+
+=== INGENIERIA INFORMATICA KIBERNUM SA ===
+  - Jorge Godoy Estay
+
+=== INGENIERIA SOLEMS.A_|-2 ===
+  - Carlos Astudillo
+  - Carlos Patricio Rojas Poblete
+  - Gonzalo Andres Ojeda Figueroa
+  - Guillermo Duque Sanchez
+  - Ignacio Pastor Zamorano Urra
+  - Ignacio Zamorano Alarcon
+  - Juan Pablo Aguilar Arraigada
+  - Patricio Eduardo Silva Cartes
+  - Victor Valencia Cruz
+
+=== JOSHUA TECNOLOGIA NET LIMITADA ===
+  - Carlos Llontop Sanchez
+  - Daniela Espinoza Zavala
+  - Francisco Jose Birrer Donoso
+  - Matias Carrasco Garrido
+  - Nicolas Cortes Rojas
+  - Hellen Elizabeth Sanhueza Avila
+  - Rodrigo Castro Huidobro
+
+=== KIMN - IT CHILE LIMITADA ===
+  - Juan Francisco Stay Arce
+  - Rodrigo Alberto Carmona Donoso
+
+=== Luna Servicios ===
+  - Antonio Pereda Reyes
+  - Matias Nicolas Valdes Garrido
+
+=== Managment Solutions ===
+  - Miguel Ruiz Velasquez
+
+=== MM ASESORIAS SPA ===
+  - Daniel Ignacio Moir Sanchez
+  - Jose Francisco Sobarzo Emperiale
+  - Luis Enrique Corbalan Barraza
+
+=== NEORIS DE CHILE LTDA. ===
+  - Agustin Nicolas Alvarez Silva
+  - Carlos Fuentes Constancio
+  - Ismael Poblete Mendieta
+
+=== NEOSOLTEC ===
+  - Alfredo Antonio Molina Fuentes
+  - Antonio Segura Cabrera
+  - Oscar De Leon Rodriguez
+
+=== NEOX TECNOLOGIAS DE INFORMACION SPA ===
+  - Natalia Figueroa Lobos
+
+=== NOTARIAS ===
+  - Cesar Augusto Suarez Rojas
+
+=== OTRO ===
+  - Cesar Antonio Perez Carrasco
+  - Fabian Dalenz Carcamo
+  - Jefreink Ortuno Mijares
+  - Marcela Costas
+  - Matias Mendaro
+  - Rafael Girarit Cubi
+  - Sebastian Rodrigo Arias Rodriguez
+
+=== RESOURCE IT CHILE SPA QUINTESS ===
+  - Alonso Salinas Mazzo
+  - Maria Fernanda Ferrer Gomez
+  - Pablo Velazquez
+
+=== SERVICIOS EMPRESARIALES GLOBAL MANAGEMENT SOLUTION ===
+  - Francisco Arenas Azocar
+  - Miguel Ruiz Velasquez
+
+=== SII GROUP CHILE SPA ===
+  - Antonia Duran Montecinos
+  - Benjamin Mendez Jimenez
+  - Claudio Mufioz Soto
+  - Eduardo Alfredo Naveas Trigo
+  - Fernando Ramos Carrasco
+  - Jose Antonio Bravo Velasco
+  - Jose Luis Collao Froimovich
+  - Nillson Raul Castillo Fernandez
+  - Pamela Zamorano Salvade
+  - Raquel Eliana Carrera Alid
+  - Sebastién Prado Cabrera
+
+=== SOC. LUNA SERVICIOS SOL. INFORMAT Y COMP. LTDA ===
+  - Hector Luis Diaz Garcia
+  - José Andres Inostroza Sepulveda
+
+=== SOCIEDAD DE INVESTIGACION Y DESARROLLO KBINNOVA LTDA ===
+  - Emmanuel Benzo
+
+=== SOCIUS SPA ===
+  - Ivan Patricio Cordero Chiriboga
+  - Karla Andrea Silva Gulppi
+  - Matias Guiñazú Acevedo
+
+=== SOFTTEK ===
+  - Abel Gazmuri Maldonado
+  - Alexander Arevalo Jacinto
+  - Alonso Andres Leiva Cerda
+  - Arturo Sanchez Aguayo
+  - Bastian Antonio Letelier Alam
+  - Camilo Pino
+  - Carla Neira Fuentes
+  - Carlos Cerruti
+  - Carlos Joaquin Carretero
+  - Cesar Andres Uribe Ossa
+  - Christian Andres Ramirez Armijo
+  - Cristhian Massa Medina
+  - Cristobal Lagos Pizarro
+  - Daniel José Sierpe Laubreaux
+  - Daniel Ortega Urrutia
+  - Daniel Romero Faundez
+  - David Forero Artunduaga
+  - Diego Herrera Garcia
+  - Diego Ignacio Villarroel
+  - Edison Alejandro Arriagada Munoz
+  - Esteban Godoy Carrasco
+  - Esteban Inostroza Leon
+  - Gonzalo Alexis Jara Pinilla
+  - Gustavo Toro Vargas
+  - Jerinverg Asdrubal Hernandez Rodriguez
+  - Jocner Patino Buznego
+  - Johanna Elizabeth Tapia Tapia
+  - John Alexander San Martin Santana
+  - Jonatan Felipe Soto Imio
+  - Jorge Escalona Rojas
+  - Jorge Ortiz Adasme
+  - José Arbey Vaneges Camargo
+  - Jose Francisco Sobarzo Emperiale
+  - Jose Miguel Zavala Franco
+  - Jose Ortega Salinas
+  - Juan Ramos Valenzuela
+  - Julian Gutierrez Uribe
+  - Julian Pozo Ortega
+  - Julio Mardones Miller
+  - Julio Soto Flores
+  - Karina Andrea Quilaqueo Lenan
+  - Leonardo Esteban Carrasco Abarca
+  - Luis Herrera Rojas
+  - Luis Vladimir Valverde Rojas
+  - Marcelo Alquinta Canales
+  - Marco Estay Guzman
+  - Marco Felipe Orellana Arriagada
+  - Margaret Henriquez Henriquez
+  - Matias Nicolas Valdes Garrido
+  - Michael Galvez Vera
+  - Milenys Moreno Nalvaez
+  - Nelson Saavedra Gaete
+  - Nicolas Bastian Alvarez Olavarria
+  - Nicolás Pino González
+  - Nora Josefina Diaz Ortufio
+  - Omar Alonso Dominguez Jiménez
+  - Pamela Silva Fontecilla
+  - Paulina Zala Silva
+  - Rainier Adolf Alderete Hobit
+  - Raquel Eliana Carrera Alid
+  - Ricardo Ivan Salazar Horta
+  - Rodrigo Andres Riquelme Medina
+  - Sergio Lyon Barrios
+  - Victor Orlando Sierpe Laubreaux
+
+=== SONDA S.A. ===
+  - Emanuel Alejandro Aguilera Madariaga
+  - Felipe Astroza Luengo
+
+=== STEFANINI CHILE S.A. ===
+  - Alejandro Ibanez Calabrano
+  - Alonso Salinas Mazzo
+  - Andree Marcel Vivanco Nunez
+  - Daniel Dominguez Hermosilla
+  - Daniel Verardi Mellado
+  - David Aaron Juvinao Gabaldon
+  - Eduardo Andreis Rivas Fernandez
+  - Enrique Saavedra
+  - Esteban Eduardo Cancino Valenzuela
+  - Felipe Gajardo
+  - Félix Galicia
+  - Fernando Jose Figueroa Saavedra
+  - Francisco Espinoza Ramos
+  - Francisco Perez Nunez
+  - Giovani Benvenuto Acevedo
+  - Johanna Soledad Martinez Munoz
+  - Jorge Humberto Bravo Aliaga
+  - Jorge Rios Madrid
+  - Jose Antonio Bravo Velasco
+  - Jose Barrios Retamales
+  - Josué Dias
+  - Juan Avalo Miranda
+  - Julio Quevedo Gomez
+  - Luis Alberto Diaz Franco
+  - Marco Bravo Rodriguez
+  - Marcos Alvarez
+  - Marcos Moreno
+  - Maria Soto Arriaza
+  - Nelson Patricio Opazo Cortez
+  - Patricio Alexis Castro Soto
+  - Pitron Gorson
+  - Ricardo Carrasco Soto
+  - Rodrigo Ignacio Gonzalez Erich
+  - Sebastian Enrique Ibarra Matamala
+  - Sebastian Prado
+  - Simon Aguilera de Filippi
+  - Yasna Sanchez Pino
+
+=== TATA CONSULTANCY SERVICES BPO CHILE S.A. ===
+  - Diego Venegas Candia
+
+=== XEROX DE CHILE S.A ===
+  - Jose Benavides Arias
+
+=== XMS TECHNOLOGIES S.A ===
+  - Raul Sebastian Alvarez Rivera
+
+=== NO CONOCIDA O SIN DEVIN ===
+  - Alvaro Recabal Vergara
+  - Saul Vasquez Veloso
+  - Joaquin Hinojosa Escanilla
+  - Joaquin Enrique Cardemil Santos
+  - Macarena Beatriz Romero Ayala
+  - Pablo Ignacio Barahona Vera
+  - Philippe Andre Maillard Vera
+  - Bastian Figueroa Soza
+  - Mario Ibarra Soto
+  - Fernando Jesus Perez Rivera
+  - Jesus Rangel
+  - Fabian Vergara
+  - Juan Francisco Javier Hernandez Llewellyn
+  - Fernando Andres Martinez Mendez
+  - Gonzalo Salas Tranolao
+  - Fabian Vergara Cruz
+  - Miguel Hernandez Ponce
+  - Hector Sebastian Alegria Perez
+  - Rodrigo Martinez Sepulveda
+  - Nelson Alcayaga Valencia
+  - Mitchell Cancino Pino
+  - Marcos Cortes Arcos
+  - Omar Gomez Gomez
+  - Jose Luis Riquelme Saez
+  - Braulio Alejandro Melgarejo Santibanez
+  - Fernando Mercado Berrios
+  - Alberto Lopez Miranda
+  - Mairen Mejia Milian
+  - Jose Navarrete Rios
+  - Christian Marcelo Gonzalez
+  - Ricardo Fernandez Alvear
+  - Oscar Chacon Cautin
+  - Carlos Andres Pino Silvera
+  - Giovanny Cano Leal
+  - Richard Castillo Ramirez
+  - Cristian Carrasco Gonzalez
+  - Luis Pardo Osorio
+  - Felipe Anibal Diaz Rodriguez
+  - Nahum Sanchez Aedo
+  - Darwin Velandria Hernandez
+  - Christopher Zuñiga Valenzuela
+  - Fabiola Andrea Munoz Cantera
+  - Rafael Rojas Liscano
+  - Jonathan Enrique Damian Pena
+  - Felipe Sebastian Montoya Gomez
+  - Xavier Fernando Torres Soto
+  - Mauricio Guillermo Salazar Perez
+  - Javier Concha Perez
+  - Jorge Lopez Aviles
+  - Felipe Rodriguez Rodriguez
+  - Franco Hauva Canepa
+  - Pia Marin Alvarado
+  - Jessica Gutierrez Rivera
+  - Pablo Carrera Rivera
+  - Javier Alejandro Duran Moena
+  - Martin Sebastian Lazaro
+  - Fernando Jesus Castillo Araneda
+  - Daniel Osvaldo Jerez Cox
+  - Cristian Eremiev Diaz
+  - Jorge Ricardo Avendaño Mardones
+  - Indira Navas
+  - Jaime Ignacio Romanini Catalan
+  - Mariela Ferrer Garate
+  - Sebastian Alejandro Correa Gonzalez
+  - Jose Inostroza Sepulveda
+  - Nils Olivares Verdejo
+  - Juan Domingo Rojas Riveros
+  - Moises Rojas
+  - Gerson Elias Kaplan Contreras
+  - Esteban Enrique Navarro Cardenas
+  - Manuel Andres Caceres Gonzalez
+  - Alvaro Pino
+  - Ruben Dario Cabrera Rios
+  - Julio Cesar Villalobos Rivas
+  - Rodrigo Medina Alcaino
+  - Erick Roy Ramirez Jaramillo
+  - Erick Duran Palma
+  - Sebastian Levicura Moya
+  - Francisco Fernandez Ramirez
+  - Jonathan Francisco Lema Collaguazo
+  - Alvaro Galan Gonzalez
+  - Rodrigo Escapa Montana
+  - Maria Campos Villalobos
+  - Rodrigo Escapa Montana
+  - Maria Campos Villalobos
+  - Vanessa Colina Alfaro
+  - Viviana Espinoza Orostica
+  - Cristian Isladan Ramos Ortiz
+  - Javier Antonio Vasquez Roa
+  - Fernando Navarro Castro
+  - Erick Vera Ibacache
+  - Harry Gomez Salazar
+  - Marcela Soledad Pulido Cantellano
+  - Felipe Lagos Giralda
+  - Marco Ignacio Seferino Silva
+  - Matteo Portanova
+  - Guillermo Hernan Rivas Gormaz
+  - Diego Andres Herrera Riquelme
+  - Mireya Céspedes Iturrieta
+  - German Goyenechea
+  - Antonio Castellanos Bernal
+  - Rodrigo Aparecido Vieira Moreira
+  - Marco Giovanni Sain
+  - Ian De Oliveira Batista Gomes
+  - Leandro Dossantos Siqueire
+  - Israel Araujo Correia de Sousa
+  - Maria Jesus Llorente Garcia
+  - Susana Garcia Alvarez
+  - Rosa Mercedes Marrero Santos
+  - Jose Carlos Moran Prieto
+  - Marcelo Correa Miranda
+  - Juliana Cristine De Freitas Leite
+  - Paulo Henrique Benfica
+  - Fabio Luis Moreira Machado
+  - Osvaldo Hitoshi Imamura
+  - Maria Eugenia Micheletto Bueno de Miranda
+  - Vagner Silveira Rocha
+  - Tarcio Danilo Custodio
+  - Vinicius Barbosa De Carvalho
+  - Daniel Arthur Gennari Junior
+  - Mateus De Sousa Corradi
+  - Marcelo Vicente De Almeida Nunes
+  - Carmen Varona Saiz
+  - Raquel Lopez Falcon
+  - Juan Carlos Navarri Canelo
+  - Alberto Nieves Gentil
+  - Jaime Burgos Montes
+  - Juan Luis Abia Vian
+  - David Manuel Cerezo
+  - Alberto Puertolas Ceresuela
+  - Monica Fernandez Hontoria
+  - Xoel Bra Diaz
+  - Jose Ignacio Prados Moreno
+  - Maria Castaneda Diaz
+  - Roberto Albir Aragones
+  - David Garcia Izquierdo
+  - Rufino Pablo Vicho Duran
+  - Fco Manuel Fuentes Montenegro
+  - Ana Belen Maria Gonzalez
+  - Alejandro Cepeda Valero
+  - Alejandro Arias Cano
+  - Monsef Belhaj Harbi
+  - Richard Rene Reisser
+  - Clara Ezquerra Diaz
+  - Felipe Domingo Loranca
+  - Carlos Martin Romero
+  - David Calvo Burillo
+  - Borja Roda Martinez
+  - Javier Perez
+  - Carlos Principe Alvarez
+  - Juan Jose Sancho Orbis
+  - German Goyenechea
+  - Christian Mauricio Alejandro Lopez
+  - Adrian Ramirez
+  - Ariel Alejandro Arce Mendez
+  - Bayron Andres Calluman Paillaleo
+  - Bruno Barbagelata
+  - Carlos Lopez Murga
+  - Christian Domingo Tapia Torres
+  - Cristian Perez Diaz
+  - Daniel Valverde Ayala
+  - Darling Fabiola Diaz Carrasco
+  - David Esteban Orellana Maureira
+  - Diego Ignacio Vargas Castillo
+  - Fernando Esteban Abadie Herrera
+  - Gabriel Avalos Arancibia
+  - Giordano Federici Stock
+  - Jaime Bahamondes Salazar
+  - Javier Felipe Nathanael Sepulveda Bravo
+  - Jorge Esteban Ramirez
+  - Jose Luis Cordero Quiroga
+  - Jose Videla Quezada
+  - Juan Arriagada Castillo
+  - Juan Cavieres Iturriaga
+  - Juan Gomez Astudillo
+  - Lucia Contreras
+  - Luis Angulo Armijo
+  - Marcelo Aravena Boza
+  - Mario Angel Contreras Soto
+  - Miguel Angel Fonseca Valdebenito
+  - Manuel GOnzalez Garces
+  - Nicolas Novoa Navarrete
+  - Patricio Sebastian Higuera Santelices
+  - Paul Ferro Nunez
+  - Raul Ruiz
+  - Renato Navarrete Garcia
+  - Sebastian Carrasco Chavarriga
+  - Sergio Pailamilla Cartagena
+  - Victor Yañez Oliva
+  - Wladimir Fuhrer Muñoz
+  - Alvaro Eduardo Ortiz Cerda
+  - Cristian Lopez Llanca
+  - Ignacio Rodriguez Hurtado
+  - Joaquin Abache
+  - Mario Sergio Castillo Miranda
